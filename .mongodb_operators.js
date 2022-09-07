@@ -17,4 +17,10 @@ $lt // <
 $lte // <=
 $ne // not equal !=
 $nin // none value
+// Logical Operators
+
+db.user.find({$and:[{name:"Ranjit"}, {age:38} ]})
+db.user.find({$and:[{name:"Ranjit"}, {age:38} ]})
+
+
 
