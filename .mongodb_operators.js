@@ -22,5 +22,9 @@ $nin // none value
 db.user.find({$and:[{name:"Ranjit"}, {age:38} ]})
 db.user.find({$and:[{name:"Ranjit"}, {age:38} ]})
 
+db.user.find({$and:[{name:"Ranjit"}, {age:{$gt:30, $lt:40}}]})
+
+db.user.find({age:{$exists:true}})
+db.user.find({address:{$type:"object"}})
 
 
