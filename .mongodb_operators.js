@@ -24,7 +24,12 @@ db.user.find({$and:[{name:"Ranjit"}, {age:38} ]})
 
 db.user.find({$and:[{name:"Ranjit"}, {age:{$gt:30, $lt:40}}]})
 
+//update system
 db.user.find({age:{$exists:true}})
 db.user.find({address:{$type:"object"}})
+db.user.find({name:{$regex: /ra/i}})
+db.user.find({name:{$regex:/^\w{4}/i}})
 
 
+// after budget insert
+db.user.find({expr:{$gt:["$budget", "$spent"]}})
