@@ -12,6 +12,18 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/home.html')
 });
 
+app.get('/api/v1/product', async(req, res, next) => {
+    try {   
+        const products = await Product.find({})
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message:"Can't get the data",
+            error:error.message,
+        })
+    }
+})
+
 app.listen(port, () => {
     console.log('Listening to port', port);
 })
