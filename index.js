@@ -24,7 +24,5 @@ app.get('/api/v1/product', async(req, res, next) => {
     }
 })
 
-app.listen(port, () => {
-    console.log('Listening to port', port);
-})
+module.exports = app;
 
